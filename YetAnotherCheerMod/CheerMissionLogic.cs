@@ -61,7 +61,7 @@ namespace YetAnotherCheerMod
                 foreach (Agent a in Mission.Current.Agents) {
                     // If the agent is null, not human, dead, or too far, etc. then stop
                     if (a == null || !a.IsHuman || a == Agent.Main || !a.IsActive() ||
-                        a.GetTrackDistanceToMainAgent() > YetAnotherCheerMod.Settings.MaxDistanceToCheer) continue;
+                        a.GetDistanceTo(Agent.Main) > YetAnotherCheerMod.Settings.MaxDistanceToCheer) continue;
 
                     // If the agent is an enemy
                     if (a.Team == Mission.Current.PlayerEnemyTeam) {
